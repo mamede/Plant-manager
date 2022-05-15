@@ -65,10 +65,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: 'bold',
     textAlign: 'center',
     color: colors.heading,
     marginTop: 38,
+    fontFamily: fonts.heading,
     lineHeight: 34
   },
   subtitle: {
