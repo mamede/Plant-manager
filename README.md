@@ -43,6 +43,10 @@ Ou seja, o App ajuda o João a cuidar com carinho das platinhas que ele tem na s
 -   [ ] React Native Gesture Handler
 -   [ ] Json Server
 
+## 🔖 Layout
+
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/IhQRtrOZdu3TrvkPYREzOy/PlantManager/duplicate). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
+
 
 ## Executando o projeto
 
