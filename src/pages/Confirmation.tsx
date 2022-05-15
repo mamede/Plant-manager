@@ -1,47 +1,61 @@
+import { useNavigation, useRoute } from '@react-navigation/core';
 import React from 'react';
-import { 
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text
-} from 'react-native'
-
-import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { Button } from '../components/Button';
-
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
+interface Params {
+  title: string;
+  subtitle: string;
+  buttonTitle: string;
+  icon: 'smile' | 'hug',
+  nextScreen: string;
+}
+
+const emojis = {
+  hug: '🤗',
+  smile: '😄'
+}
+
 export function Confirmation() {
-  const navigation = useNavigation()
-  
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  const {
+    title,
+    subtitle,
+    buttonTitle,
+    icon,
+    nextScreen
+  } = route.params as Params;
+
   function handleMoveOn() {
-    navigation.navigate('PlantSelect')
+    navigation.navigate(nextScreen);
   }
+
   return(
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.emoji}>
-          👏
+          {emojis[icon]}
         </Text>
+
         <Text style={styles.title}>
-          Prontinho!
+          {title}
         </Text>
+
         <Text style={styles.subtitle}>
-          Agora vamos começar a cuidar das suas
-          plantinhas com muito cuidado.
+          {subtitle}
         </Text>
+
         <View style={styles.footer}>
-          <Button
-            title="Começar"
-            onPress={handleMoveOn}
-          />
+          <Button title={buttonTitle} onPress={handleMoveOn} />
         </View>
       </View>
     </SafeAreaView>
-  )
+  );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -55,9 +69,6 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 30
   },
-  emoji: {
-    fontSize: 78
-  },
   title: {
     fontSize: 22,
     fontFamily: fonts.heading,
@@ -70,9 +81,11 @@ const styles = StyleSheet.create({
     fontFamily: fonts.text,
     textAlign: 'center',
     fontSize: 17,
-    paddingHorizontal: 20,
+    paddingVertical: 10,
     color: colors.heading,
-    marginTop: 10
+  },
+  emoji: {
+    fontSize: 78
   },
   footer: {
     width: '100%',
