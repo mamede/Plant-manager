@@ -73,6 +73,6 @@ export default api;
 <div align="center">
   <small>Desenvolvido com 💚 por Felipe Mamede</small>
 
-  [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/felipe-mamede/)](https://www.linkedin.com/in/felipe-mamede/) 
+  [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/felipe-mamede/)](https://www.linkedin.com/in/felipemamede/) 
   
 </div>
